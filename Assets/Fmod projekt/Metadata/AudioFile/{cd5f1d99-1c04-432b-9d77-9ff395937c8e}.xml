@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.03.00">
+	<object class="AudioFile" id="{cd5f1d99-1c04-432b-9d77-9ff395937c8e}">
+		<property name="assetPath">
+			<value>renderowane pliki audio/player/walk/stone/foot_stone_5.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>0.625</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{24ceec97-45ba-45c0-929e-b0b639d011c8}</destination>
+		</relationship>
+	</object>
+</objects>

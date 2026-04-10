@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.03.00">
+	<object class="EncodableAsset" id="{54e1325c-83ee-4ddc-a5a4-cfe832c1dfdb}">
+		<property name="assetPath">
+			<value>renderowane pliki audio/player/walk/wood/</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{24ceec97-45ba-45c0-929e-b0b639d011c8}</destination>
+		</relationship>
+	</object>
+</objects>

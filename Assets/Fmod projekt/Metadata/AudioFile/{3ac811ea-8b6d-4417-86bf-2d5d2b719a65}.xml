@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.03.00">
+	<object class="AudioFile" id="{3ac811ea-8b6d-4417-86bf-2d5d2b719a65}">
+		<property name="assetPath">
+			<value>renderowane pliki audio/player/land stone/land_stone_6.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>0.75</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{24ceec97-45ba-45c0-929e-b0b639d011c8}</destination>
+		</relationship>
+	</object>
+</objects>

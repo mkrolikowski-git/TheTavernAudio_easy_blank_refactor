@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.03.00">
+	<object class="EncodableAsset" id="{0d764ef8-4594-48d6-bc8e-0f99ae8900f5}">
+		<property name="assetPath">
+			<value>renderowane pliki audio/player/land stone/</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{24ceec97-45ba-45c0-929e-b0b639d011c8}</destination>
+		</relationship>
+	</object>
+</objects>
