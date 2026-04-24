@@ -31,6 +31,7 @@ public class Footsteps : MonoBehaviour
         distToGround = GetComponent<Collider>().bounds.extents.y;
         
         // Usunięto: Inicjalizację słownika.
+        
     }
 
     void Update()
@@ -80,6 +81,7 @@ public class Footsteps : MonoBehaviour
         {
             string surfaceTag = hit.collider.tag;
             PlaySurfaceSound(footstepsSoundInstance, footstepsEvent, surfaceTag);
+            print(surfaceTag);
         }
     }
 
@@ -90,12 +92,9 @@ public class Footsteps : MonoBehaviour
     {
         if (IsGrounded())
         {
-            RaycastHit hit;
-            if (Physics.Raycast(transform.position, Vector3.down, out hit, distToGround + 0.5f))
-            {
-                string surfaceTag = hit.collider.tag;
-                PlaySurfaceSound(jumpSoundInstance, jumpEvent, surfaceTag);
-            }
+            // The combined FMOD event "Jump and land" uses its own parameter values
+            // (Jump, LandStone, LandWood). Use the Jump label here.
+            PlaySurfaceSound(jumpSoundInstance, jumpEvent, "Jump", true);
             isGrounded = false;
             isJumping = true;
         }
@@ -121,7 +120,8 @@ public class Footsteps : MonoBehaviour
         if (Physics.Raycast(transform.position, Vector3.down, out hit, distToGround + 0.5f))
         {
             string surfaceTag = hit.collider.tag;
-            PlaySurfaceSound(landSoundInstance, landEvent, surfaceTag);
+            PlaySurfaceSound(landSoundInstance, landEvent, surfaceTag, true);
+            print(surfaceTag);
         }
         isGrounded = true;
         isJumping = false;
@@ -134,21 +134,48 @@ public class Footsteps : MonoBehaviour
     /// <param name="soundInstance">Instancja dźwięku FMOD.</param>
     /// <param name="eventRef">Referencja do zdarzenia FMOD.</param>
     /// <param name="surfaceTag">Tag powierzchni, na której znajduje się gracz.</param>
-    private void PlaySurfaceSound(FMOD.Studio.EventInstance soundInstance, EventReference eventRef, string surfaceTag)
+    private void PlaySurfaceSound(FMOD.Studio.EventInstance soundInstance, EventReference eventRef, string surfaceTag, bool useJumpAndLandEvent = false)
     {
         // Zmienna przechowująca parametr FMOD. Domyślnie ustawiona na null/pusty string.
         string surfaceParameter = null; 
+        string parameterName = useJumpAndLandEvent ? "Jump and land" : "Foot Surface";
 
         // Instrukcja SWITCH do mapowania Tagu na Parametr FMOD.
+        if (useJumpAndLandEvent)
+        {
+            switch (surfaceTag)
+            {
+                case "Stone":
+                case "Inside_stone":
+                case "Outside":
+                    surfaceParameter = "LandStone";
+                    break;
+                case "Wood":
+                case "Inside_wood":
+                    surfaceParameter = "LandWood";
+                    break;
+                case "Jump":
+                    surfaceParameter = "Jump";
+                    break;
+            }
+        }
+        else
+        {
         switch (surfaceTag)
         {
             case "Stone":
+                surfaceParameter = "Stone";
+                break;
             case "Inside_stone":
+                    surfaceParameter = "Stone";
+                    break;
             case "Outside": // "Outside" również używa parametru "Stone"
                 surfaceParameter = "Stone";
                 break;
             
             case "Wood":
+                surfaceParameter = "Wood";
+                break;
             case "Inside_wood":
                 surfaceParameter = "Wood";
                 break;
@@ -157,6 +184,7 @@ public class Footsteps : MonoBehaviour
                 surfaceParameter = "Bed";
                 break;
         }
+        }
 
         // Jeśli znaleziono pasujący parametr, odtwórz dźwięk.
         if (surfaceParameter != null)
@@ -164,7 +192,7 @@ public class Footsteps : MonoBehaviour
             soundInstance = RuntimeManager.CreateInstance(eventRef);
             soundInstance.set3DAttributes(RuntimeUtils.To3DAttributes(gameObject.transform));
             // Ustawia parametr FMOD na podstawie ustalonej wartości.
-            soundInstance.setParameterByNameWithLabel("Footsteps_surface", surfaceParameter); 
+            soundInstance.setParameterByNameWithLabel(parameterName, surfaceParameter); 
             soundInstance.start();
             soundInstance.release();
         }
