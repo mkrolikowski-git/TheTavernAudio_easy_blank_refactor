@@ -5296,7 +5296,7 @@ GameObject:
   - component: {fileID: 1610884564}
   m_Layer: 7
   m_Name: Stone_2
-  m_TagString: Stone
+  m_TagString: Inside_stone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7026,7 +7026,7 @@ GameObject:
   - component: {fileID: 2015243835}
   m_Layer: 7
   m_Name: Stone_1
-  m_TagString: Stone
+  m_TagString: Outside
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
