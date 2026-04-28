@@ -2274,6 +2274,7 @@ GameObject:
   - component: {fileID: 613997989}
   - component: {fileID: 613997994}
   - component: {fileID: 613997995}
+  - component: {fileID: 613997996}
   m_Layer: 6
   m_Name: Player
   m_TagString: Player
@@ -2515,6 +2516,26 @@ MonoBehaviour:
     Path: event:/Player/Jump and land
   isGrounded: 1
   isJumping: 0
+--- !u!114 &613997996
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 613997984}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f7d95e26b5cbbe94f93658dcf4aa33cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Outside_foot_switch
+  snapshotActivated: 0
+  outsideSnapshot:
+    Guid:
+      Data1: 472729058
+      Data2: 1220801230
+      Data3: -891039581
+      Data4: 1360617588
+    Path: snapshot:/Outside
 --- !u!1 &649385901
 GameObject:
   m_ObjectHideFlags: 0
@@ -2534,7 +2555,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &649385902
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3904,7 +3925,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1199357099
 MonoBehaviour:
   m_ObjectHideFlags: 0

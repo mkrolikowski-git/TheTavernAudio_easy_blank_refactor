@@ -13,7 +13,7 @@ public class Outside_foot_switch : MonoBehaviour
     // Odległość do podłoża od środka kolidera.
     private float distToGround;
 
-    // FMOD - Instancja snapshotu.
+    // FMOD - Instancja snapshotu
     private FMOD.Studio.EventInstance outsideSnapshotInstance;
     public EventReference outsideSnapshot;
 
