@@ -703,6 +703,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1330636291972076, guid: cb181bc6c302bca40929333077286a04, type: 3}
       insertIndex: -1
       addedObject: {fileID: 159108037}
+    - targetCorrespondingSourceObject: {fileID: 1742205292912966, guid: cb181bc6c302bca40929333077286a04, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 431972714}
   m_SourcePrefab: {fileID: 100100000, guid: cb181bc6c302bca40929333077286a04, type: 3}
 --- !u!1 &159108029 stripped
 GameObject:
@@ -1520,6 +1523,40 @@ Transform:
   - {fileID: 1710004319}
   m_Father: {fileID: 1583661112}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &431972709 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1742205292912966, guid: cb181bc6c302bca40929333077286a04, type: 3}
+  m_PrefabInstance: {fileID: 159108028}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &431972714
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 431972709}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a0a3acf8d75e1714f8433f67364d416a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Doors
+  rotationDuration: 1
+  doorsOpened: 1
+  isRotating: 0
+  doorsEvent:
+    Guid:
+      Data1: 1220505877
+      Data2: 1339309124
+      Data3: -906297936
+      Data4: -832916644
+    Path: event:/Door
+  insideRoomSnap:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
 --- !u!1 &437025906
 GameObject:
   m_ObjectHideFlags: 0
@@ -2275,6 +2312,7 @@ GameObject:
   - component: {fileID: 613997994}
   - component: {fileID: 613997995}
   - component: {fileID: 613997996}
+  - component: {fileID: 613997997}
   m_Layer: 6
   m_Name: Player
   m_TagString: Player
@@ -2536,6 +2574,22 @@ MonoBehaviour:
       Data3: -891039581
       Data4: 1360617588
     Path: snapshot:/Outside
+--- !u!114 &613997997
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 613997984}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68f4ed2e91580f4459a40df16f56ba56, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::VCA
+  globalMuteActive: 1
+  musicMuteActive: 0
+  tavernMuteActive: 0
+  outsideMuteActive: 0
 --- !u!1 &649385901
 GameObject:
   m_ObjectHideFlags: 0
@@ -2674,7 +2728,7 @@ Transform:
   m_GameObject: {fileID: 649385901}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 405.7, y: 8.524, z: 315.89}
+  m_LocalPosition: {x: 405.7, y: 5.87, z: 315.89}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3955,8 +4009,8 @@ MonoBehaviour:
   NonRigidbodyVelocity: 0
   Params: []
   OverrideAttenuation: 1
-  OverrideMinDistance: 4
-  OverrideMaxDistance: 14
+  OverrideMinDistance: 4.270189
+  OverrideMaxDistance: 18.593597
 --- !u!135 &1199357100
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -4044,7 +4098,7 @@ Transform:
   m_GameObject: {fileID: 1199357098}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 400.2, y: 8.524, z: 315.89}
+  m_LocalPosition: {x: 406.11, y: 5.03, z: 315.89}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4079,8 +4133,8 @@ MonoBehaviour:
   NonRigidbodyVelocity: 0
   Params: []
   OverrideAttenuation: 1
-  OverrideMinDistance: 4
-  OverrideMaxDistance: 14
+  OverrideMinDistance: 10.033325
+  OverrideMaxDistance: 19.582092
 --- !u!1 &1225706416
 GameObject:
   m_ObjectHideFlags: 0
@@ -4526,7 +4580,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -783, y: -78}
+  m_AnchoredPosition: {x: -134, y: 120}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1473028131
@@ -4577,8 +4631,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 24
+  m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18

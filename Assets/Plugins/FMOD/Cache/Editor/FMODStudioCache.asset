@@ -168,7 +168,7 @@ MonoBehaviour:
   StringsBanks:
   - {fileID: 7633133689528253755}
   cacheVersion: 131859
-  cacheTime: 639129770704155906
+  cacheTime: 639138418580187241
   SerializableEventsDict:
   - key: event:/Door
     index: 0
@@ -312,10 +312,10 @@ MonoBehaviour:
   Path: Assets/Fmod projekt/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 639129770704135897
+  lastModified: 639138418580167191
   FileSizes:
   - Name: Desktop
-    Value: 3584256
+    Value: 3584800
   Exists: 1
 --- !u!114 &2990107967632728030
 MonoBehaviour:
@@ -414,10 +414,10 @@ MonoBehaviour:
   Path: Assets/Fmod projekt/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 639129770704155906
+  lastModified: 639138418580187241
   FileSizes:
   - Name: Desktop
-    Value: 1420
+    Value: 1596
   Exists: 1
 --- !u!114 &8612818266487021675
 MonoBehaviour:
