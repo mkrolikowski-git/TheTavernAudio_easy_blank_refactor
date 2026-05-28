@@ -78,10 +78,10 @@
 			<value>-80</value>
 		</property>
 		<property name="attackTime">
-			<value>1200</value>
+			<value>980</value>
 		</property>
 		<property name="peakValue">
-			<value>-2.5</value>
+			<value>-9</value>
 		</property>
 		<property name="holdTime">
 			<value>320</value>
@@ -90,7 +90,7 @@
 			<value>360</value>
 		</property>
 		<property name="sustainValue">
-			<value>-12</value>
+			<value>-9</value>
 		</property>
 		<property name="releaseTime">
 			<value>1200</value>

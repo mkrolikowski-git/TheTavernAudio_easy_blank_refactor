@@ -86,25 +86,40 @@ public class Doors : MonoBehaviour, IInteractable
     /// <summary>
     /// Aktywuje lub dezaktywuje snapshot dźwiękowy pokoju.
     /// </summary>
-    private void RoomsSnap()
+    public void RoomsSnap()
     {
-        RoomAmbient roomAmbient = FindObjectOfType<RoomAmbient>();
+        RoomAmbient roomAmbient = FindFirstObjectByType<RoomAmbient>();
 
-        // Logika włączania i wyłączania snapshotu.
-        if (roomAmbient.ambientActivated && doorsOpened)
+        if (roomAmbient == null)
         {
-            // Dezaktywuje snapshot.
+            Debug.LogWarning("RoomAmbient script not found in scene!");
+            return;
+        }
+
+        // Dźwięk ma być stłumiony TYLKO wtedy, gdy: Gracz jest w środku ORAZ drzwi są zamknięte
+        bool shouldBeMuffled = roomAmbient.ambientActivated && !doorsOpened;
+
+        if (shouldBeMuffled)
+        {
+            // Sprawdza, czy snapshot już gra, żeby nie odpalać go podwójnie
+            FMOD.Studio.PLAYBACK_STATE playbackState;
+            insideRoomSnapshot.getPlaybackState(out playbackState);
+
+            if (!insideRoomSnapshot.isValid() || playbackState == FMOD.Studio.PLAYBACK_STATE.STOPPED)
+            {
+                insideRoomSnapshot = RuntimeManager.CreateInstance(insideRoomSnap);
+                insideRoomSnapshot.start();
+            }
+        }
+        else
+        {
+            // Jeśli drzwi są otwarte, LUB gracz jest na zewnątrz, wyłącz snapshot
             if (insideRoomSnapshot.isValid())
             {
                 insideRoomSnapshot.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
                 insideRoomSnapshot.release();
+                insideRoomSnapshot.clearHandle(); // Czyści referencję, żeby is.Valid() zwracało false
             }
-        }
-        else if (roomAmbient.ambientActivated && !doorsOpened)
-        {
-            // Aktywuje snapshot.
-            insideRoomSnapshot = RuntimeManager.CreateInstance(insideRoomSnap);
-            insideRoomSnapshot.start();
         }
     }
 }

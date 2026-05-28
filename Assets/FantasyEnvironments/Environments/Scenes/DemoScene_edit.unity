@@ -1540,7 +1540,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a0a3acf8d75e1714f8433f67364d416a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Doors
-  rotationDuration: 1
+  rotationDuration: 1.1
   doorsOpened: 1
   isRotating: 0
   doorsEvent:
@@ -1552,11 +1552,11 @@ MonoBehaviour:
     Path: event:/Door
   insideRoomSnap:
     Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
+      Data1: -2013821137
+      Data2: 1179367536
+      Data3: 948034487
+      Data4: 213075421
+    Path: snapshot:/InsideRoom
 --- !u!1 &437025906
 GameObject:
   m_ObjectHideFlags: 0
@@ -2640,7 +2640,7 @@ MonoBehaviour:
   Params: []
   OverrideAttenuation: 1
   OverrideMinDistance: 4
-  OverrideMaxDistance: 14
+  OverrideMaxDistance: 21
 --- !u!135 &649385903
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -3972,7 +3972,6 @@ GameObject:
   - component: {fileID: 1199357101}
   - component: {fileID: 1199357100}
   - component: {fileID: 1199357099}
-  - component: {fileID: 1199357104}
   m_Layer: 0
   m_Name: amb_tavern
   m_TagString: Untagged
@@ -4009,8 +4008,8 @@ MonoBehaviour:
   NonRigidbodyVelocity: 0
   Params: []
   OverrideAttenuation: 1
-  OverrideMinDistance: 4.270189
-  OverrideMaxDistance: 18.593597
+  OverrideMinDistance: 5
+  OverrideMaxDistance: 20
 --- !u!135 &1199357100
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -4104,37 +4103,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1199357104
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1199357098}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: FMODUnity::FMODUnity.StudioEventEmitter
-  CollisionTag: 
-  EventReference:
-    Guid:
-      Data1: 1495819580
-      Data2: 1239498817
-      Data3: -847899461
-      Data4: -953982553
-    Path: event:/Ambients/amb-tavern
-  Event: 
-  EventPlayTrigger: 1
-  EventStopTrigger: 0
-  AllowFadeout: 1
-  TriggerOnce: 0
-  Preload: 0
-  NonRigidbodyVelocity: 0
-  Params: []
-  OverrideAttenuation: 1
-  OverrideMinDistance: 10.033325
-  OverrideMaxDistance: 19.582092
 --- !u!1 &1225706416
 GameObject:
   m_ObjectHideFlags: 0
@@ -4546,6 +4514,73 @@ Transform:
   m_Children: []
   m_Father: {fileID: 2131066730}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1470225728
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1470225730}
+  - component: {fileID: 1470225729}
+  - component: {fileID: 1470225731}
+  m_Layer: 0
+  m_Name: RoomTriggerArea
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1470225729
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1470225728}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dfc4a4da891945f49aaa5b911f9f8711, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RoomAmbient
+  ambientActivated: 0
+--- !u!4 &1470225730
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1470225728}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 401.3569, y: 12.39377, z: 307.365}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &1470225731
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1470225728}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 10.303009, y: 3.3351097, z: 3.5732727}
+  m_Center: {x: -0.89320374, y: -0.36649132, z: 0.59025574}
 --- !u!1 &1473028129
 GameObject:
   m_ObjectHideFlags: 0
@@ -7571,3 +7606,4 @@ SceneRoots:
   - {fileID: 297431490}
   - {fileID: 1199357103}
   - {fileID: 649385906}
+  - {fileID: 1470225730}
