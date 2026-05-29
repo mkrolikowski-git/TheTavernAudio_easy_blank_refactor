@@ -103,11 +103,14 @@
 		<property name="nameOfPropertyBeingModulated">
 			<value>value</value>
 		</property>
+		<property name="attackTime">
+			<value>320</value>
+		</property>
 		<property name="peakValue">
 			<value>-17.5</value>
 		</property>
 		<property name="holdTime">
-			<value>0</value>
+			<value>600</value>
 		</property>
 		<property name="decayTime">
 			<value>580</value>
